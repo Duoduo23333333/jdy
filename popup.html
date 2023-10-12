@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            padding-top: 0;
+            min-width: 360px;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+        p {
+            color: #5a807cdf; 
+            font-size: 0.5em; 
+            margin-bottom: 10px;
+
+        }
+        h2 {
+            color: #10737a; 
+            width: 100%;
+            margin-top:1.2em;
+            margin-bottom:0.4em;
+        }
+        #firsth2{
+            margin-top:0.5em;
+            margin-bottom:0;
+
+        }
+        #dd{
+            color: #147676;
+            font-weight: bold;
+            text-align: right;
+        }
+        HR{
+            opacity: 0.2;
+        }
+        .options-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            overflow-y: auto;
+        }
+        .option-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 8em;
+            height: 2em;
+            margin: 0.2em;
+            padding: 0.7em;
+            background-color: #e0e0e0;
+            color: #979797;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .option-container:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        .option-container.active {
+            background-color: #25a39f;
+            color: white;
+        }
+        input[type="checkbox"] {
+            display: none;
+        }
+    
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #36363611;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          
+            background: #ededed;
+        }
+    </style>
+    
+</head>
+<body>
+<div>
+    <p id="dd">开启/关闭功能后，刷新页面生效。</p>
+    <HR color=#30bbb7 SIZE=0.5>
+</div>
+<h2 id="firsth2">关闭弹窗快捷方式</h2>
+    <p>若出现左键单击相关bug，关闭「单击弹窗外」即可。</p>
+<div class="options-wrapper">
+    
+    <div class="option-container" data-checkbox="leftClickClose">
+        <input type="checkbox" id="leftClickClose"> 
+        <span>单击弹窗外</span>
+    </div>
+    <div class="option-container" data-checkbox="dblClickClose">
+        <input type="checkbox" id="dblClickClose"> 
+        <span>双击弹窗外</span>
+    </div>
+    <div class="option-container" data-checkbox="rightClickClose">
+        <input type="checkbox" id="rightClickClose"> 
+        <span>右击弹窗外</span>
+    </div>
+    <div class="option-container" data-checkbox="escClose">
+        <input type="checkbox" id="escClose"> 
+        <span>Esc键</span>
+    </div>
+    <h2>其他快捷键</h2>
+    <div class="option-container" data-checkbox="ctrlSave">
+        <input type="checkbox" id="ctrlSave"> 
+        <span>Ctrl + S <br> 保存/完成/确定</span>
+    </div>
+    <div class="option-container" data-checkbox="ctrlSubmit">
+        <input type="checkbox" id="ctrlSubmit"> 
+        <span>Ctrl + S <br> 提交</span>
+    </div>
+    <div class="option-container" data-checkbox="ctrlDaiban">
+        <input type="checkbox" id="ctrlDaiban"> 
+        <span>Ctrl + Q <br> 待办</span>
+    </div>
+    <h2>左侧"表单"列表</h2>
+    <div class="option-container" data-checkbox="openRight">
+        <input type="checkbox" id="openRight"> 
+        <span>右击打开数据管理</span>
+    </div>
+    <div class="option-container" data-checkbox="openDoubleClick">
+        <input type="checkbox" id="openDoubleClick"> 
+        <span>双击打开编辑页面</span>
+    </div>
+    <h2>页面内容增删</h2>
+    <div class="option-container" data-checkbox="createDelete">
+        <input type="checkbox" id="createDelete"> 
+        <span>删 - 我发起的</span>
+    </div>
+    <div class="option-container" data-checkbox="transactorsDelete">
+        <input type="checkbox" id="transactorsDelete"> 
+        <span>删 - 我处理的</span>
+    </div>
+    <div class="option-container" data-checkbox="ccUsersDelete">
+        <input type="checkbox" id="ccUsersDelete"> 
+        <span>删 - 抄送我的</span>
+    </div>
+    <div class="option-container" data-checkbox="NavItems">
+        <input type="checkbox" id="NavItems"> 
+        <span>增 - 顶部导航</span>
+    </div>
+    <div class="option-container" data-checkbox="threeList">
+        <input type="checkbox" id="threeList"> 
+        <span>增 - 左侧列表</span>
+    </div>
+
+</div>
+
+
+
+<script src="popup.js"></script>
+</body>
+</html>

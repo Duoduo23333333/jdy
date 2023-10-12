@@ -1,0 +1,68 @@
+
+{
+  "manifest_version": 3,
+  "name": "简道云编辑器增强",
+  "version": "1.0",
+  "description": "一些小功能",
+  "permissions": ["activeTab", "storage", "webNavigation", "webRequest"],
+ 
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.jiandaoyun.com/*"],
+      "exclude_matches": ["https://www.jiandaoyun.com/dashboard/app/*/etl/*"],
+      "js": ["script1.js"]
+    },
+    {
+      "matches": ["https://www.jiandaoyun.com/*"],
+      "js": ["script2.js"]
+    },
+    {
+      "matches": ["https://www.jiandaoyun.com/dashboard/app/*/form/*/edit*"],
+      "js": ["script3.js"]
+    },
+    {
+      "matches": ["https://www.jiandaoyun.com/dashboard*"],
+      "js": ["script4.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.jiandaoyun.com/dashboard*"],
+      "js": ["script5.js"]
+    },
+    {
+      "matches": ["https://www.jiandaoyun.com/dashboard*"],
+      "js": ["script6.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.jiandaoyun.com/dashboard*"],
+      "js": ["script7.js"]
+    }
+  ],
+
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["pageScript.js"],
+      "matches": ["https://www.jiandaoyun.com/*"]
+    }
+]
+
+}
+
+
+
+
